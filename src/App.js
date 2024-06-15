@@ -1,23 +1,18 @@
-import logo from './logo.svg';
+import yatoro from './yatoro.png'
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  let [burgerCount, setBurgerCount] = useState(0);
+
+  function onYatoroClick() {
+    setBurgerCount(++burgerCount);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <p>Бургеров уничтожено: { burgerCount }</p>
+      <img src={yatoro} className="yatoro-img" alt="logo" onClick={onYatoroClick}/>
     </div>
   );
 }
